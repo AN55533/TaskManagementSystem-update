@@ -45,7 +45,7 @@ router.post("/login", async (req, res) => {
         .json({ error: "Authentication failed- password doesn't match" });
     }
     const token = jwt.sign(
-      { userId: user._id, userType: user.userType },
+      { username: user.username, userType: user.userType },
       "your-secret-key",
       {
         expiresIn: "1h",

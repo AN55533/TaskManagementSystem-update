@@ -47,7 +47,7 @@ const Admindashboard = () => {
   return (
     <div className="container mx-auto my-8">
       <div className="grid grid-cols-3 gap-4">
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-blue p-6 rounded-lg shadow-md">
           <h2 className="text-lg font-semibold mb-2">Tasks Overview</h2>
           <div className="mx-5 my-10">Total Tasks: {taskCount}</div>
         </div>
@@ -68,26 +68,7 @@ const Admindashboard = () => {
         </div>
       </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-md mt-8">
-        <h2 className="text-lg font-semibold mb-4">Task List</h2>
-        <table className="min-w-full border-collapse border border-gray-300">
-          <thead className="bg-gray-200">
-            <tr>
-              <th className="border border-gray-300 px-4 py-2">Title</th>
-              <th className="border border-gray-300 px-4 py-2">Assigned To</th>
-              <th className="border border-gray-300 px-4 py-2">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              {/* <td className="border border-gray-300 px-4 py-2">{tasks.title}</td> */}
-              <td className="border border-gray-300 px-4 py-2"></td>
-              <td className="border border-gray-300 px-4 py-2"></td>
-            </tr>
-            {/* Add dynamic rendering of tasks here */}
-          </tbody>
-        </table>
-      </div>
+      
     </div>
   );
 };

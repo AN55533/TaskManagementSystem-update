@@ -26,17 +26,17 @@ const TaskCards = () => {
     
     return (
         <>
-            
+            <h1 className='text-center text-2xl text-blue-500 mt-20 font-bold'>TASK DETAILS</h1>
           <table  className="min-w-full bg-white">
         <thead>
           <tr>
-            <th className="py-2 px-4 bg-gray-200">Task Id</th>
-            <th className="py-2 px-4 bg-gray-200">Title</th>
-            <th className="py-2 px-4 bg-gray-200">Status</th>
-            <th className="py-2 px-4 bg-gray-200">Description</th>
-            <th className="py-2 px-4 bg-gray-200">Assigned To</th>
-            <th className="py-2 px-4 bg-gray-200">Due date</th>
-            <th className="py-2 px-4 bg-gray-200">Action</th>
+            <th className="py-2 px-4 bg-gray-700 text-white">Task Id</th>
+            <th className="py-2 px-4 bg-gray-700 text-white">Title</th>
+            <th className="py-2 px-4 bg-gray-700 text-white">Status</th>
+            <th className="py-2 px-4 bg-gray-700 text-white">Description</th>
+            <th className="py-2 px-4 bg-gray-700 text-white">Assigned To</th>
+            <th className="py-2 px-4 bg-gray-700 text-white">Due date</th>
+            <th className="py-2 px-4 bg-gray-700 text-white">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -49,7 +49,7 @@ const TaskCards = () => {
                    <td className="border px-4 py-2">{task.assignedto}</td>
               <td className="border px-4 py-2">{task.duedate}</td>
               <td className="border px-4 py-3">
-             <Link to={`/tasks/${task.taskId}`} className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 self-start mx-5">View details</Link>
+             <Link to={`/tasks/${task.taskId}`} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-green-600 self-start mx-5">View details</Link>
          {/* <button class="bg-green-500 text-white px-2 py-1 rounded">Edit</button>
          <button class="bg-red-500 text-white px-2 py-1 rounded">Delete</button> */}
          

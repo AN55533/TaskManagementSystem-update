@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useLoaderData, useNavigate } from "react-router-dom";
 
-const EditTaskPage = () => {
+const UsereditPage = () => {
   const tasks = useLoaderData();
   const [taskId, setTaskId] = useState(tasks.taskId);
   const [title, setTitle] = useState(tasks.title);
-  const [assignedto, setAssignedto] = useState(tasks.assignedto);
-  const [description, setDescription] = useState(tasks.description);
   const [status, setStatus] = useState(tasks.status);
   const [duedate, setDuedate] = useState(tasks.duedate);
   const [users, setUsers] = useState([]);
@@ -32,8 +30,6 @@ const EditTaskPage = () => {
     const updateTask = {
       title,
       taskId,
-      assignedto,
-      description,
       status,
       duedate
     };
@@ -94,47 +90,6 @@ const EditTaskPage = () => {
                 />
               </div>
 
-              <div class="mb-4">
-                <label
-                  htmlFor="assignedto"
-                  class="block text-gray-700 font-bold mb-2"
-                >
-                  AssignedTo
-                </label>
-                <select
-  id="assignedto"
-  name="assignedto"
-  className="border rounded w-full py-2 px-3"
-  required
-  value={assignedto}
-  onChange={(e) => setAssignedto(e.target.value)}
->
-  <option value="">Select a user</option>
-  {users.map((user) => (
-    <option key={users.username} value={users.username}>
-      {user.username}
-    </option>
-  ))}
-</select>
-              </div>
-
-              <div class="mb-4">
-                <label
-                  htmlFor="description"
-                  class="block text-gray-700 font-bold mb-2"
-                >
-                  Description
-                </label>
-                <textarea
-                  id="description"
-                  name="description"
-                  class="border rounded w-full py-2 px-3"
-                  rows="4"
-                  placeholder="Small description on the course"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                ></textarea>
-              </div>
 
               <div class="mb-4">
                 <label
@@ -187,4 +142,4 @@ const EditTaskPage = () => {
   );
 };
 
-export default EditTaskPage;
+export default UsereditPage;

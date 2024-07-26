@@ -25,15 +25,15 @@ const TaskPage = () => {
         <div className="max-w-4xl mx-auto p-5 ">
           <section>
             <a
-              className="flex items-center my-5 gap-1 font-medium  "
-              href="/tasks"
+              className="flex items-center my-5 gap-1 font-medium   "
+              href="/home"
             >
               {" "}
               Back to Task
             </a>
           </section>
 
-          <div className="bg-purple-100 shadow-lg rounded-lg overflow-hidden">
+          <div className="bg-blue-100 shadow-lg rounded-lg overflow-hidden">
             <img
               src={img1}
               alt="Task Thumbnail"
@@ -68,17 +68,16 @@ const TaskPage = () => {
                   Status
                 </h2>
                 <p>{tasks.status}</p>
+                </div>
+                 <div className="mb-6">
+                <h2 className="text-2xl font-semibold text-purple-800 mb-2">
+                  Due date
+                </h2>
+                <p>{tasks.duedate}</p>
               </div>
               </div>
              
-              
-              
-
-             
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-row justify-end gap-4 mr-[205px] ">
+              <div className="flex flex-row justify-end gap-4 mr-[205px] ">
          { userType=='admin' &&
          <>
           <Link to={`/edit-task/${id}`} className="flex bg-blue-500 hover:bg-blue-600 text-white font-bold  rounded-full h-10 w-32 focus:outline-none focus:shadow-outline justify-center items-center">
@@ -88,8 +87,16 @@ const TaskPage = () => {
             Remove Task
           </a>
          </>}
-         
-        </div>
+         </div>
+              
+
+             
+            </div>
+          
+        
+        
+          </div>
+          </div>
       </div>
     </div>
   );
@@ -100,6 +107,6 @@ const taskLoader = async ({ params }) => {
   return data;
 };
 
-// export default CoursePage;
+
 
 export { TaskPage as default, taskLoader };
