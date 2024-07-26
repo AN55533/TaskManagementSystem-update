@@ -16,6 +16,7 @@ const Mytask = () => {
                 const res = await fetch('/api/tasks');
                 const data = await res.json();
                 setTasks(data);
+                console.log(data,"task from api")
                 setFilteredTasks(data); // Initialize filtered tasks with all tasks
             } catch (error) {
                 console.log('Error fetching tasks:', error);
@@ -31,6 +32,7 @@ const Mytask = () => {
                 const res = await fetch('/api/loginuser'); // Adjust this URL as per your backend endpoint
                 const data = await res.json();
                 setLoginuser(data);
+                console.log(data,"user")
             } catch (error) {
                 console.log('Error fetching login user:', error);
             }
@@ -104,18 +106,19 @@ const Mytask = () => {
                         <option value="done">Done</option>
                     </select>
                 </div>
-                {/* Search Bar */}
+               
                 <div>
                     <label htmlFor="taskSearch" className="font-bold">Search:</label>
                     <input type="text" id="taskSearch" className="border rounded py-2 px-3" placeholder="Search tasks..." value={searchTerm} onChange={handleSearchChange} />
-                </div>
-                {/* Cancel Button */}
+                
+               
                 <button className="bg-gray-300 text-gray-700 py-2 px-4 rounded ml-4" onClick={clearFilters}>Cancel</button>
             </div>
+                </div>
 
             <h3 className="text-xl font-bold mb-4">My Tasks</h3>
 
-            {/* Tasks Display Area */}
+           
             <div className="bg-white p-6 rounded-lg shadow-lg">
                 <table className="min-w-full bg-white">
                     <thead>

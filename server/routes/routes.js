@@ -3,8 +3,16 @@ const router = express.Router();
 const tasks = require("../models/Tasks");
 const verifyToken = require("../middleware/authMiddleware")
 
-router.get("/tasks",verifyToken, async (req, res) => {
+router.get("/taskdata",verifyToken, async (req, res) => {
   const details = await tasks.find({});
+  res.json(details);
+});
+
+
+router.get("/tasks", verifyToken, async (req, res) => {
+  const user = req.username;
+  console.log(user)
+  const details = await tasks.find({assignedto:user});
   res.json(details);
 });
 

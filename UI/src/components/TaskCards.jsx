@@ -12,8 +12,9 @@ const TaskCards = () => {
   
         const fetchtask = async () => {
             try {
-                const res = await fetch('/api/tasks');
-                const data = await res.json()
+                const res = await fetch('/api/taskdata');
+              const data = await res.json()
+              console.log(data,"ds")
                 setTask(data)
             } catch (error) {
                 console.log('error', error)
