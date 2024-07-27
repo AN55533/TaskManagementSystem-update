@@ -9,6 +9,10 @@ router.get("/taskdata",verifyToken, async (req, res) => {
 });
 
 
+
+
+
+
 router.get("/tasks", verifyToken, async (req, res) => {
   const user = req.username;
   console.log(user)
@@ -33,17 +37,18 @@ router.post("/tasks", async (req, res) => {
   }
 });
 
-
-router.get('/api/tasks/count', async (req, res) => {
+// Example for Express.js
+router.get('/tasks/count', async (req, res) => {
   try {
-    const count = await tasks.countDocuments();
+    const count = await tasks.countDocuments(); // Adjust if needed
     res.json({ count });
-    console.log(count);
   } catch (error) {
-    console.error('Error counting tasks:', error);
-    res.status(500).json({ message: 'Server error' });
+    console.error('Error fetching task count:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+
 
 
 
@@ -65,13 +70,14 @@ router.put("/tasks/:taskId", async (req, res) => {
   }
 });
 
-router.delete("/tasks/:taskId", async (req, res) => {
+router.get("/deletetasks/:id", async (req, res) => {
   const taskId = req.params.id;
   try {
     const result = await tasks.findOneAndDelete({ taskId: taskId });
     if (!result) {
       return res.status(404).send("task not found");
     }
+    console.log("task deleted")
     res.send("task deleted successfully");
   } catch (error) {
     res.status(500).send("Server error");

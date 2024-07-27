@@ -11,7 +11,8 @@ const Navbar= ()=>{
           <Link to="/home" className='ml-20'>Home</Link>
           {/* <Link to="/admindash" className='ml-20'>Admin Dashboard</Link> */}
           <Link to="/tasks" className='ml-20'>Tasks</Link>
-          <Link to="/addtask" className='ml-20'>Add Task</Link>
+            <Link to="/addtask" className='ml-20'>Add Task</Link>
+            
           <Logout/>
 
         </div>

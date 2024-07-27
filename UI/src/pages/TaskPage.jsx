@@ -14,10 +14,15 @@ const TaskPage = () => {
   const deleteTask =async () => {
     const confirm = window.confirm('delete?')
     if (!confirm) return;
-    const res = await fetch (`/api/tasks/${id}`,
-{method:'DELETE'}
-    )
-    navigate('/tasks')
+//     const res = await fetch (`/api/tasks/${id}`,
+// {method:'DELETE'}
+//     )
+//     navigate('/tasks')
+    const res = await fetch(`/api/deletetasks/${id}`);
+    console.log("asdfghjkl");
+    if(res.ok){
+      navigate('/tasks')
+      }
   }
   return (
     <div>
@@ -73,7 +78,7 @@ const TaskPage = () => {
                 <h2 className="text-2xl font-semibold text-purple-800 mb-2">
                   Due date
                 </h2>
-                <p>{tasks.duedate}</p>
+                <p>{tasks.duedate.split('T')[0]}</p>
               </div>
               </div>
              

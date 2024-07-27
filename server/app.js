@@ -29,7 +29,7 @@ const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-mongoose.connect("mongodb://localhost:27017/Enhanced_TaskManagement_system");
+mongoose.connect("mongodb://mongodb:27017/Enhanced_TaskManagement_system");
 
 const database = mongoose.connection;
 

@@ -8,7 +8,7 @@ const EditTaskPage = () => {
   const [assignedto, setAssignedto] = useState(tasks.assignedto);
   const [description, setDescription] = useState(tasks.description);
   const [status, setStatus] = useState(tasks.status);
-  const [duedate, setDuedate] = useState(tasks.duedate);
+  const [duedate, setDuedate] = useState('2024-07-31T00:00:00.000Z');
   const [users, setUsers] = useState([]);
   
   useEffect(() => {
@@ -23,7 +23,12 @@ const EditTaskPage = () => {
         }
     };
     fetchuser()
-},[])
+  }, [])
+  
+
+
+
+  
 
   const navigate = useNavigate();
 
@@ -161,7 +166,7 @@ const EditTaskPage = () => {
                Due date
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   id="duedate"
                   name="duedate"
                   class="border rounded w-full py-2 px-3 mb-2"

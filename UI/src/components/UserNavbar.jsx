@@ -12,7 +12,7 @@ const UserNavbar = () => {
           {/* <Link to="/home" className='ml-20'>Home</Link> */}
           <Link to="/userdash" className='ml-20'>User Dashboard</Link>
           <Link to="/mytask" className='ml-20'>My Tasks</Link>
-          <Link to="/profile" className='ml-20'>Profile</Link>
+          {/* <Link to="/userdetails" className='ml-20'>Users</Link> */}
           <Logout/>
 
         </div>

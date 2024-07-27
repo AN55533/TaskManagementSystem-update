@@ -13,24 +13,24 @@ const Userdashboard = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
                
-                <div className="bg-white p-6 rounded-lg shadow-lg">
+                <div className="bg-blue-500 p-6 rounded-lg shadow-md text-white">
                     <h3 className="text-xl font-bold mb-4 ">Total Tasks</h3>
                     <p className="text-3xl">15</p>
                 </div>
                 
-                <div className="bg-white p-6 rounded-lg shadow-lg">
+                <div className="bg-blue-500 p-6 rounded-lg shadow-md text-white">
                     <h3 className="text-xl font-bold mb-4">Completed Tasks</h3>
                     <p className="text-3xl">10</p>
                 </div>
                 
-                <div className="bg-white p-6 rounded-lg shadow-lg">
+                <div className="bg-blue-500 p-6 rounded-lg shadow-md text-white">
                     <h3 className="text-xl font-bold mb-4">Pending Tasks</h3>
                     <p className="text-3xl">5</p>
                 </div>
             </div>
 
-            
-            <div className="bg-white p-6 rounded-lg shadow-lg mb-6">
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-6'>
+            <div className="bg-blue-300 p-6 rounded-lg shadow-lg mb-6 text-center">
                 <h3 className="text-xl font-bold mb-4">Upcoming Deadlines</h3>
                 <ul>
                     <li className="mb-2">
@@ -46,7 +46,7 @@ const Userdashboard = () => {
             </div>
 
            
-            <div className="bg-white p-6 rounded-lg shadow-lg mb-6">
+            <div className=" p-6 rounded-lg shadow-lg mb-6 text-center bg-blue-300">
                 <h3 className="text-xl font-bold mb-4">Recent Activity</h3>
                 <ul>
                     <li className="mb-2">
@@ -60,7 +60,7 @@ const Userdashboard = () => {
                     </li>
                 </ul>
             </div>
-
+        </div>
 {/*             
             <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-4">My Tasks</h3>

@@ -74,23 +74,19 @@ const Mytask = () => {
     };
 
     // Delete a task
-    const deleteTask = async (taskId) => {
-        try {
-            const res = await fetch(`/api/tasks/${taskId}`, {
-                method: 'DELETE',
-            });
-            if (res.ok) {
-                // Remove the deleted task from tasks and filteredTasks
-                const updatedTasks = tasks.filter(task => task._id !== taskId);
-                setTasks(updatedTasks);
-                setFilteredTasks(updatedTasks);
-            } else {
-                console.error('Failed to delete task');
-            }
-        } catch (error) {
-            console.error('Error deleting task:', error);
-        }
-    };
+  const deleteTask =async () => {
+    const confirm = window.confirm('delete?')
+    if (!confirm) return;
+//     const res = await fetch (`/api/tasks/${id}`,
+// {method:'DELETE'}
+//     )
+//     navigate('/tasks')
+    const res = await fetch(`/api/deletetasks/${id}`);
+    console.log("asdfghjkl");
+    if(res.ok){
+      navigate('/tasks')
+      }
+  }
 
     return (
         <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -136,8 +132,8 @@ const Mytask = () => {
                                 <td className="border px-4 py-2">{task.status}</td>
                                 <td className="border px-4 py-2">{task.duedate}</td>
                                 <td className="border px-4 py-3">
-                                    <Link to={`/edit-task/user`}  className="bg-green-500 text-white px-2 py-1 rounded">Edit</Link>
-                                    <button className="bg-red-500 text-white px-2 py-1 rounded" onClick={() => deleteTask(task._id)}>Delete</button>
+                                    <Link to={`/edit-task/user`}  className="flex bg-blue-500 hover:bg-blue-600 text-white font-bold  rounded-full h-10 w-32 focus:outline-none focus:shadow-outline justify-center items-center">Edit</Link>
+                                    {/* <button className="bg-red-500 text-white px-2 py-1 rounded" onClick={() => deleteTask(task._id)}>Delete</button> */}
                                 </td>
                             </tr>
                         ))}

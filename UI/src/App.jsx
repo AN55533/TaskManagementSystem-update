@@ -22,6 +22,7 @@ import Frontpage from "./pages/Frontpage"
 import Mytask from "./components/Mytask"
 import MytaskPage from "./pages/MytaskPage"
 import UsereditPage from "./pages/UsereditPage"
+
 function App() {
 
   const router = createBrowserRouter(
@@ -42,7 +43,7 @@ function App() {
         <Route path="/edit-task/:id" element={<EditTaskPage />} loader={taskLoader} />
          <Route path="/edit-task/user" element={<UsereditPage/>} loader={taskLoader}/>
         <Route path="/tasks/:id" element={<TaskPage />} loader={taskLoader} />
-        
+      
 
         
      

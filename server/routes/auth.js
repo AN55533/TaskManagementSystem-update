@@ -71,7 +71,10 @@ router.get("/users", async (req, res) => {
   const details = await User.find({});
   res.json(details);
 });
-
+router.get("/userdata", async (req, res) => {
+  const details = await User.find({});
+  res.json(details);
+});
 
 
 // Logout

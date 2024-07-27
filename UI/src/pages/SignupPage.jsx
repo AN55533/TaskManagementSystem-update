@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import img1 from "../assets/images/img1.jpg";
+
+
+
+const styles = {
+  backgroundImage: `url(${img1})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  
+}
+
+
 
 const SignupPage = () => {
   const [userName, setUserName] = useState("");
@@ -42,7 +54,7 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="bg-purple-100 flex items-center justify-center h-screen">
+    <div className="bg-purple-100 flex items-center justify-center h-screen" style={styles} >
       <div className="bg-white p-10 rounded-lg shadow-lg max-w-sm w-full">
         <h2 className="text-3xl font-bold text-purple-700 mb-4 text-center">
           Sign Up
